@@ -1,4 +1,27 @@
 
+"""
+Pypi Uploader
+Usage:
+First of all, you need to copy the script to /usr/bin directory and mark it as an executable, like so:
+
+$ ~ sudo cp script.py /usr/bin/NAMEYOUWANT
+$ ~ sudo chmod +x /usr/bin/NAMEYOUWANT
+
+And then to upload PyPI, you need to create a file called .pypirc that has to contain login credentials.
+
+
+$ ~ YOURTEXTEDITOR ~/.pypirc
+Open a file and paste this to in it:
+
+[pypi]
+username = token
+password = pypi-AgEI
+
+
+"""
+
+
+
 import io
 import os
 import subprocess
@@ -18,7 +41,7 @@ gpu_available = len(out) > 0
 
 
 ##### Version
-version = "0.1.0"
+version ='6.1.0'
 """"
 with io.open(os.path.join(root, 'nlp_architect', 'version.py'), encoding='utf8') as f:
     version_f = {}
@@ -27,7 +50,7 @@ with io.open(os.path.join(root, 'nlp_architect', 'version.py'), encoding='utf8')
 """
 
 
-with open("README.txt", "r") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
@@ -49,7 +72,7 @@ scripts = [
 setup(
     name="cli_code",
     version=version,
-    description="Tools for Python",
+    description="Tools for Python Doc Generation, Tool analysis, Package Auto Install, Converter",
     author="arita37",
     url="https://github.com/arita37/cli_code",
     install_requires=["numpy"],
