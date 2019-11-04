@@ -459,3 +459,69 @@ def code_parse_file(filepattern="*.py", folder="", search_regex="", dirlevel=0):
 
 
 
+
+def ztest():
+    DIRCWD = "/home/ubuntu/ztest/"
+    pprint("### Unit Tests")
+    # os_folder_create("/ztest")
+
+    pprint("module_doc_write")
+    module_doc_write(module_name="jedi", outputfile="zz_doc_jedi.txt")
+
+    pprint("module_signature_write")
+    module_signature_write(module_name="json", isdebug=1)
+
+    pprint("module_unitest_write")
+    module_unitest_write(
+        input_signature_csv_file="doc_json.csv", outputfile="zz_unitest_run_json.txt", isdebug=1
+    )
+
+    pprint("module_unitest_write: module name")
+    module_unitest_write(module_name="json", outputfile="zz_unitest_run_json2.txt", isdebug=1)
+
+    pprint("module_signature_compare: version between 2 docs.")
+    df = module_signature_compare(
+        "doc_json.csv", "doc_json.csv", export_csv="zz_json_compare.csv", return_df=1
+    )
+    print(df.head(5))
+    """
+    Might be tricky to get 2 version of numpy in same environnement....
+      Need to generate in 2 different python envs  and get the csv
+    """
+
+    pprint("module Github Donwload")
+    # df= github_code_search(keywords= ["import jedi",   "jedi.Script(" ], outputfolder= os.getcwd()+"/tmp/", browser="",
+    #                       page_start=25, page_end= 25, isreturn_df=1, isdebug=1)
+    # print( len(df), df.dtypes )
+
+    pprint("code search")
+    os_file_search_fast("codesource.py", texts=["from ", "import "], mode="str")
+    aa = code_search_file(
+        srch_pattern=["from ", "import "],
+        mode="str",
+        folder_in=DIRCWD,
+        file_pattern="*.py",
+        dirlevel=1,
+    )
+    aa.head(3)
+
+    pprint("code search: import module conda")
+    lextern, lall, df_import = code_extract_pattern(
+        pattern="import", module_name_in="conda", import_type1="extern"
+    )
+    print(lextern[:20], lall[:20], df_import.head(5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
