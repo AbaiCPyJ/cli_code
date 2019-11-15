@@ -33,7 +33,10 @@ https://github.com/zhangqianhui/vae-gan-tensorflow
 
 # 2)  Build conda env from source code parsing
   # cd repo
-
+https://github.com/arita37/cli_code/blob/master/cli_code/cli_module_autoinstall.py
+   
+   
+   
 
 # 3) Launch all files in root (main.py) with subprocess to check if running
     # Log error messages on disk
@@ -46,7 +49,7 @@ https://github.com/zhangqianhui/vae-gan-tensorflow
  
 # 4) Parse source code with  import inspect and generate signature for each functiom
   #  Write on disk
-    
+    https://github.com/arita37/cli_code/blob/master/cli_code/cli_module_analysis.py
     
     
 
