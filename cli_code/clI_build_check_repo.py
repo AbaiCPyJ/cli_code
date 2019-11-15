@@ -29,11 +29,11 @@ Goal is to automate code check using a python script
 
 
 # 2)  Build conda env from source code parsing
-
+  # cd repo
 
 
 # 3) Launch all files in root (main.py) with subprocess to check if running
-     Log error messages on disk
+    # Log error messages on disk
  
  
  
@@ -41,8 +41,8 @@ Goal is to automate code check using a python script
  
  
  
-# 4) Parse source code with inspect and generate signature for each functiom
-    Write on disk
+# 4) Parse source code with  import inspect and generate signature for each functiom
+  #  Write on disk
     
     
     
